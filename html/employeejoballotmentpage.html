@@ -156,13 +156,15 @@
                             <th>Allotment Date</th>
                             <th>Deadline Date</th>
                             <th>Task Assigned</th>
+                            <th>Task Link</th>
                             <th>Upload Submission</th>
                             <th>Employer's Comment</th>
                             <th>Employee's Comment</th>
                         </tr>
                         <!-- // new data -->
                         <script>
-                            fetch('http://139.180.157.248:7890/joballotment?uid=6').then(function (response) {
+                            var uid = localStorage.getItem("uid");
+                            fetch('http://139.180.157.248:7890/joballotment?uid=' + uid).then(function (response) {
 
                                 // The API call was successful!
                                 if (response.ok) {
@@ -187,6 +189,8 @@
                                         element.submission_date + '</td>';
                                     employee += '<td>' +
                                         element.title + '</td>';
+                                    employee += `<td><a href="http://139.180.157.248:7890/${element.task}" style="color:black";>link</a></td>`;
+
 
                                     // employee += '<td>' +
                                     // element.task + '</td>';

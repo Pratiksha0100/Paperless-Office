@@ -69,6 +69,7 @@
               .then(response => response.json())
               .then(result => {
                 console.log(result.data);
+                localStorage.setItem("uid",result.data.uid)
                  if (result.data.role === 'employee') {
                    window.location.href = 'dashemployee.html'
                  }
@@ -87,3 +88,16 @@
 </body>
 
 </html>
+
+
+
+
+
+
+<!-- if( reuslt.data.role == 'employee') { -->
+<!-- window.location.href = 'employee.html' -->
+<!-- } -->
+<!-- else if ( result.data.role == 'employer') { -->
+<!-- window.location.href = 'employer.html' -->
+<!-- } -->
+<!-- window.location.href = 'dashemployee.html'; -->

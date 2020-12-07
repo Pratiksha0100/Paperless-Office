@@ -164,7 +164,9 @@
                         </tr>
                         <!-- // new data -->
                         <script>
-                            fetch('http://139.180.157.248:7890/joballotment?uid=1').then(function (response) {
+                            const urlParams = new URLSearchParams(window.location.search);
+                            const uid = urlParams.get('uid');
+                            fetch('http://139.180.157.248:7890/joballotment?uid=' + uid).then(function (response) {
 
                                 // The API call was successful!
                                 if (response.ok) {
@@ -189,8 +191,7 @@
                                     employee += '<td>' +
                                         element.submission_date + '</td>';
 
-                                    employee += '<td>' +
-                                        element.task + '</td>';
+                                    employee += `<td><a href="http://139.180.157.248:7890/${element.task}" style="color:black";>link</a></td>`;
                                     employee += '<td>' +
                                         element.submission + '</td>';
                                     employee += '<td>' +
@@ -228,10 +229,11 @@
 
                         const formData = new FormData();
 
-
-
-                        formData.append("alloted_by", "2");
-                        formData.append("alloted_to", "1");
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const uid = urlParams.get('uid');
+                        const eid = localStorage.getItem('uid');
+                        formData.append("alloted_by", eid);
+                        formData.append("alloted_to", uid);
                         formData.append("submission_date", new Date(date).getTime() / 1000);
                         formData.append("title", title)
                         formData.append('document', fileField.files[0]);
