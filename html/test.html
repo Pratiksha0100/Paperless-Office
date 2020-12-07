@@ -1,0 +1,63 @@
+<--INSERT THIS SCRIPT TAG AFTER YOUR </tr> tag-->
+
+
+
+
+
+<script>
+    fetch('https://jsonplaceholder.typicode.com/todos').then(function (response) {
+
+        // The API call was successful!
+        if (response.ok) {
+            return response.json();
+        } else {
+            return Promise.reject(response);
+        }
+    }).then(function (data) {
+        // This is the JSON DATA from our response
+
+        console.log(data);
+
+        data.forEach(element => {
+            var employee = '';
+
+            employee += '<tr>';
+            employee += '<td>' +
+                element.id + '</td>';
+
+            employee += '<td>' +
+                element.title + '</td>';
+
+            employee += '<td>' +
+                element.userId + '</td>';
+
+            employee += '</tr>';
+
+
+            var table = document.querySelector('table')
+
+            table.insertAdjacentHTML('beforeend', employee)
+        });
+
+
+    }).catch(function (err) {
+        // There was an error
+        console.warn('Something went wrong.', err);
+    }); 
+</script>
+</table>
+</div>
+<script>
+function w3_open() {
+document.getElementById("main").style.marginLeft = "20%";
+document.getElementById("mySidebar").style.width = "20%";
+document.getElementById("mySidebar").style.display = "block";
+// document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+document.getElementById("main").style.marginLeft = "0%";
+document.getElementById("mySidebar").style.width = "0%";
+document.getElementById("mySidebar").style.display = "none";
+document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
