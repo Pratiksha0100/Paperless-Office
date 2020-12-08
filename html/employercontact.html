@@ -1,85 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Employer Personal</title>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-     <link rel="stylesheet" href="css/paperlessoffice.css">
-     <!-- Bootstrap core CSS -->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Employer Contact Page</title>
+    <style>
+        label {
+            display: block;
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+
+        .center {
+            position: absolute;
+            left: 50%;
+            -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        }
+
+        .right {
+            position: absolute;
+            right: 52%;
+            -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        }
+
+        .tanvisidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #288078;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+            background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: #079280;
+        }
+
+        .button1:hover {
+            background-color: rgb(150, 212, 26);
+            color: white;
+        }
+
+        .button2 {
+            background-color: #079280;
+        }
+
+        .button2:hover {
+            background-color: rgb(150, 212, 26);
+            color: white;
+        }
+
+        input,
+        label {
+            margin: .4rem 0;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-right: 2%;
+        }
+
+        .table td,
+        .table th {
+            padding: 12px 15px;
+            border: 3px solid white;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .table th {
+            background-color: green;
+            color: #ffffff;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
 
 
-  </head>
-  <body>
+    <body>
+        <!--------------------------------------------------- Monthly Data------------------------------------------->
+        <div style="padding: 10px; border: 1px solid black; float:right; ">
+        </div>
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-left tanvisidebar" style="display:none" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+            <a href="dashemployer.html" class="w3-bar-item w3-button">Home</a>
+        </div>
 
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left tanvisidebar" style="display:none" id="mySidebar">
-     <button class="w3-bar-item w3-button w3-large"
-     onclick="w3_close()">Close &times;</button>
-     <a href="dashemployer.html" class="w3-bar-item w3-button">Home Page</a>
-     <a href="employerpersonal.html" class="w3-bar-item w3-button">Personal Information</a>
-    </div>
+        <div id="main">
 
-    <div id="main">
-
-    <div class="w3-teal">
-     <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-    </div>
-    <br>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12"><br>
-          <h1 class="tanvi-head">Contact Information</h1>
-
-          <form>
-            <div class="form-group">
-              <label for="cont"> Contact Number </label>
-              <input disabled type="number" name="" id="cont" class="form-control">
-            </div><br>
-
-            <div class="form-group">
-              <label for="city"> City Of Residence </label>
-              <input disabled type="text" name="" id="city" class="form-control">
-            </div><br>
-
-            <div class="form-group">
-              <label for="twit"> Twitter Username </label>
-              <input disabled type="text" name="" id="twit" class="form-control">
-            </div><br>
-
-            <div class="form-group">
-              <label for="link"> LinkedIn Username </label>
-              <input disabled type="text" name="" id="link" class="form-control">
-            </div><br>
+            <div class="w3-teal">
+                <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+            </div>
+            <br>
+            <div style="margin: 5%">
+                <h3 style="color:white; font-size:45px; margin-top:15px; text-align:center;">Contact Information</h3>
+                <br>
+                <!--<form method="POST" class="form-inline">
+        <label for="start" style="margin-right:10px">Select Month :</label>
+        <input type="month" id="start" name="start" value="2020-08" min="1950-03" style="margin-right:20px">
+        <label style="margin-right:10px">From Date: </label><input type="date" name="from" style="margin-right:20px">
+        <label style="margin-right:10px">To Date: </label><input type="date" name="to" style="margin-right:20px">
+        <input type="submit" id="searchMonthly" name="searchMonthly" value="search">-->
+                <br>
 
 
-    </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered d">
+                        <tr>
+                            <th>Contact Number</th>
+                            <th>City Of Residence</th>
+                            <th>Twitter Username</th>
+                            <th>Linked Username</th>
+                        </tr>
+                        <!-- // new data -->
+                        <script>
+                          fetch('http://139.180.157.248:7890/profile?uid=3').then(function (response) {
+
+                              // The API call was successful!
+                              if (response.ok) {
+                                  return response.json();
+                              } else {
+                                  return Promise.reject(response); 
+                              }
+                          }).then(function (data) {
+                              // This is the JSON DATA from our response
+
+                              console.log(data);
+
+                              var element = data.data
+                                  var employee = '';
+
+                                  employee += '<tr>';
+
+                                  employee += '<td>' +
+                                      element.phone + '</td>';
+
+                                  employee += '<td>' +
+                                      element.city + '</td>';
+
+                                      employee += '<td><a href="https://twitter.com/elonmusk" style="color:black";>' +
+                                          element.twitter + '</a></td>';
+
+                                  employee += '<td><a href="https://www.linkedin.com/company/spacex" style="color:black";>' +
+                                      element.linkedin + '</a></td>';
 
 
 
-    <script>
-    function w3_open() {
-     document.getElementById("main").style.marginLeft = "20%";
-     document.getElementById("mySidebar").style.width = "20%";
-     document.getElementById("mySidebar").style.display = "block";
-     // document.getElementById("openNav").style.display = 'none';
-    }
-    function w3_close() {
-     document.getElementById("main").style.marginLeft = "0%";
-       document.getElementById("mySidebar").style.width = "0%";
-     document.getElementById("mySidebar").style.display = "none";
-     document.getElementById("openNav").style.display = "inline-block";
-    }
-    </script>
+                                  employee += '</tr>';
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+                                  var table = document.querySelector('table')
+
+                                  table.insertAdjacentHTML('beforeend', employee)
 
 
 
-  </body>
+                          }).catch(function (err) {
+                              // There was an error
+                              console.warn('Something went wrong.', err);
+                          });
+                        </script>
+                    </table>
+                </div>
+                <script>
+                    function w3_open() {
+                        document.getElementById("main").style.marginLeft = "20%";
+                        document.getElementById("mySidebar").style.width = "20%";
+                        document.getElementById("mySidebar").style.display = "block";
+                        // document.getElementById("openNav").style.display = 'none';
+                    }
+                    function w3_close() {
+                        document.getElementById("main").style.marginLeft = "0%";
+                        document.getElementById("mySidebar").style.width = "0%";
+                        document.getElementById("mySidebar").style.display = "none";
+                        document.getElementById("openNav").style.display = "inline-block";
+                    }
+                </script>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+                    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                    crossorigin="anonymous"></script>
+
+
+    </body>
+
 </html>
