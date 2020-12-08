@@ -151,45 +151,46 @@
                         </tr>
                         <!-- // new data -->
                         <script>
-                          fetch('http://139.180.157.248:7890/manual?department=A').then(function (response) {
+                            fetch('http://139.180.157.248:7890/manual?department=A').then(function (response) {
 
-                              // The API call was successful!
-                              if (response.ok) {
-                                  return response.json();
-                              } else {
-                                  return Promise.reject(response);
-                              }
-                          }).then(function (data) {
-                              // This is the JSON DATA from our response
+                                // The API call was successful!
+                                if (response.ok) {
+                                    return response.json();
+                                } else {
+                                    return Promise.reject(response);
+                                }
+                            }).then(function (data) {
+                                // This is the JSON DATA from our response
 
-                              // console.log(data);
+                                // console.log(data);
 
-                              data.data.forEach(element => {
-                                  var employee = '';
+                                data.data.forEach(element => {
+                                    var employee = '';
 
-                                  employee += '<tr>';
-                                  employee += '<td>' +
-                                      element.date + '</td>';
+                                    employee += '<tr>';
+                                    employee += '<td>' +
+                                        element.date + '</td>';
 
-                                  employee += '<td>' +
-                                      element.title + '</td>';
+                                    employee += '<td>' +
+                                        element.title + '</td>';
 
-                                  employee += '<td>' +
-                                      element.document + '</td>';
+                                    // employee += '<td>' +
+                                        // element.document + '</td>';
+                                    employee += `<td><a href="http://139.180.157.248:7890/${element.document}" style="color:black";>link</a></td>`;
 
-                                  employee += '</tr>';
-
-
-                                  var table = document.querySelector('table')
-
-                                  table.insertAdjacentHTML('beforeend', employee)
-                              });
+                                    employee += '</tr>';
 
 
-                          }).catch(function (err) {
-                              // There was an error
-                              console.warn('Something went wrong.', err);
-                          });                        </script>
+                                    var table = document.querySelector('table')
+
+                                    table.insertAdjacentHTML('beforeend', employee)
+                                });
+
+
+                            }).catch(function (err) {
+                                // There was an error
+                                console.warn('Something went wrong.', err);
+                            });                        </script>
                     </table>
                 </div>
                 <script>
